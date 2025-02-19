@@ -3,10 +3,10 @@
 #include "WaterVehicle.h"
 
 class Boat : public WaterVehicle{
-protected: double length;
+private: double length;
 public:
-    Boat(std::string brand, int year, std::string vesselType, double length) : WaterVehicle(brand, year, veseelType), length(length) {}
-    void getInfo() const override {
+    Boat(std::string brand, int year, std::string vesselType, double length) : WaterVehicle(brand, year, vesselType), length(length) {}
+    void getInfo() const override{
         std::cout << "Boat class:: Length: " << length << " meters" << std::endl;
         WaterVehicle::getInfo(); 
     }
