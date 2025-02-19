@@ -1,4 +1,12 @@
 #include <iostream>
+#include "Car.h"
+#include "SportsCar.h"
+#include "Truck.h"
+#include "AirVehicle.h"
+#include "Helicopter.h"
+#include "Boat.h"
+#include "Submarine.h"
+#include <vector>
 using namespace std;
 
 int main(){
@@ -12,18 +20,9 @@ int main(){
     vehicles.push_back(new WaterVehicle("Yamaha", 2020, "Recreational"));
     vehicles.push_back(new Boat("Sunseeker", 2021, "Luxury", 10.5));
     vehicles.push_back(new Submarine("Seawolf", 2015, "Military", 800));
-    
-    // Iterate through the vector and call getInfo() for each vehicle
-    for (int i = 0; i < vehicles.size(); i++) {
-       Vehicle* ptr = vehicles[i];
-       cout<<ptr->getInfo()<<endl;
-       cout<<ptr->Vehicle::getInfo()<<endl;
-       cout << "---------------------------" << endl;
-    }
-    // Clean up allocated memory
-    for (int i = 0; i < vehicles.size(); i++) {
-       delete vehicles[i];
-    }
+
+    for(auto v : vehicles){ v->getInfo(); cout << "---------------------------" << endl;}    
+    for(int i=0; i<vehicles.size(); i++){ delete vehicles[i];}
     return 0;
 }
 /*---- Expected output ----*
