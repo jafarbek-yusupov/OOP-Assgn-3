@@ -1,14 +1,14 @@
-#ifndef HELICOPTER_H
-#define HELICOPTER_H
-#include "AirVehicle.h"
+#ifndef AIRVEHICLE_H
+#define AIRVEHICLE_H
+#include "Vehicle.h"
 
-class Helicopter : public AirVehicle{
-private: int rotorCount;
+class AirVehicle : public Vehicle{
+protected: int maxAlt;
 public:
-    Helicopter(std::string brand, int year, int maxAlt, int rotorCount) : AirVehicle(brand, year, maxAlt), rotorCount(rotorCount) {}
+    AirVehicle(std::string brand, int year, int maxAlt) : Vehicle(brand, year), maxAlt(maxAlt) {}
     void getInfo() const override{
-        std::cout << "Helicopter class:: Rotor count: " << rotorCount << std::endl;
-        AirVehicle::getInfo();
+        std::cout << "AirVehicle class:: Max altitude: " << maxAlt << " meters" << std::endl;
+		std::cout << "Vehicle class:: Brand: " << brand << std::endl << "Vehicle class:: Year: " << year << std::endl;
     }
 };
 
