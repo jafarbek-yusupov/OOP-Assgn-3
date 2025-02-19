@@ -8,8 +8,7 @@ class Vehicle{
 protected: std::string brand; int year;
 public:
     Vehicle(const std::string& brand, int year) : brand(brand), year(year){}
-    virtual void getInfo() const = 0;
-    virtual ~Vehicle() = default;
+    virtual void getInfo() const = 0; virtual ~Vehicle() = default;
 };
 
 // #endif
