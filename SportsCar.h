@@ -3,11 +3,11 @@
 #include "Car.h"
 
 class SportsCar : public Car{
-protected: int maxSpeed;
+private: int maxSpeed;
 public:
-    SportsCar(std::string brand, int year, int wheels, int numDoors, int maxSpeed) : Car(brand, year, wheels, numDoors) maxSpeed(maxSpeed){}
+    SportsCar(std::string brand, int year, int wheels, int numDoors, int maxSpeed) : Car(brand, year, wheels, numDoors), maxSpeed(maxSpeed){}
     void getInfo() const override{
-        std::cout << "SportsCar class:: Max speed: " << maxSpeed << std::endl;
+        std::cout << "SportsCar class:: Max speed: " << maxSpeed << " km/h" << std::endl;
         Car::getInfo();
     }
 };
