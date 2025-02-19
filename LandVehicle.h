@@ -1,14 +1,14 @@
-#ifndef AIRVEHICLE_H
-#define AIRVEHICLE_H
+#ifndef LANDVEHICLE_H
+#define LANDVEHICLE_H
 #include "Vehicle.h"
 
-class AirVehicle : public Vehicle{
-protected: int maxAlt;
-public:
-    AirVehicle(std::string brand, int year, int maxAlt) : Vehicle(brand, year), maxAlt(maxAlt) {}
-    void getInfo() const override{
-        std::cout << "AirVehicle class:: Max altitude: " << maxAlt << " meters" << std::endl;
-		std::cout << "Vehicle class:: Brand: " << brand << std::endl << "Vehicle class:: Year: " << year << std::endl;
+class LandVehicle : public Vehicle{
+protected: int wheels;
+public: 
+    LandVehicle(std::string brand, int year, int wheels) : Vehicle(brand, year), wheels(wheels){}
+    void getInfo() const override {
+        std::cout << "LandVehicle class:: Number of wheels: " << wheels << std::endl;
+        std::cout << "Vehicle class:: Brand: " << brand << std::endl << "Vehicle class:: Year: " << year << std::endl;
     }
 };
 
