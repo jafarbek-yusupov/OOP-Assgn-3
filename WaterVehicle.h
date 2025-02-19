@@ -7,7 +7,8 @@ protected: std::string vesselType;
 public:
     WaterVehicle(std::string brand, int year, std::string vesselType) : Vehicle(brand, year), vesselType(vesselType) {}
     void getInfo() const override{
-        cout << "WaterVehicle class:: Vessel type: " << vesselType << std::endl << "Vehicle class:: Brand: " << brand << std::endl << "Vehicle class:: Year: " << year << std::endl;
+        std::cout << "WaterVehicle class:: Vessel type: " << vesselType << std::endl;
+        std::cout << "Vehicle class:: Brand: " << brand << std::endl << "Vehicle class:: Year: " << year << std::endl;
     }
 };
 
