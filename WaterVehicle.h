@@ -2,7 +2,7 @@
 #define WATERVEHICLE_H
 #include "Vehicle.h"
 
-class WaterVehicle : public Vehicle {
+class WaterVehicle : public Vehicle{
 protected: std::string vesselType;
 public:
     WaterVehicle(std::string brand, int year, std::string vesselType) : Vehicle(brand, year), vesselType(vesselType) {}
