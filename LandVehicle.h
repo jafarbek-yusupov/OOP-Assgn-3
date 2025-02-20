@@ -3,13 +3,11 @@
 #include "Vehicle.h"
 
 class LandVehicle : public Vehicle{
-protected: int wheels;
-public: 
-LandVehicle(std::string brand, int year, int wheels) : Vehicle(brand, year), wheels(wheels){}
-void getInfo() const override {
-    std::cout << "LandVehicle class:: Number of wheels: " << wheels << std::endl;
-    std::cout << "Vehicle class:: Brand: " << brand << std::endl << "Vehicle class:: Year: " << year << std::endl;
-}
+protected:
+    int numWheels;
+public:
+    LandVehicle(std::string b, int y, int wheels) : Vehicle(b,y), numWheels(wheels) {}
+    std::string getInfo() const override{ return "LandVehicle class: Number of wheels: " + std::to_string(numWheels) + " Vehicle class: Brand: " + brand + " Vehicle class: Year: " + std::to_string(year);}
 };
 
 #endif
