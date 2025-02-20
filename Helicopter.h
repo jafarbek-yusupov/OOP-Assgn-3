@@ -5,11 +5,8 @@
 class Helicopter : public AirVehicle{
 private: int rotorCount;
 public:
-Helicopter(std::string brand, int year, int maxAlt, int rotorCount) : AirVehicle(brand, year, maxAlt), rotorCount(rotorCount) {}
-void getInfo() const override{
-    std::cout << "Helicopter class:: Rotor count: " << rotorCount << std::endl;
-    AirVehicle::getInfo();
-}
+    Helicopter(std::string b, int y, int rotors) : AirVehicle(b, y, 12000), rotorCount(rotors) {}
+    std::string getInfo() const override{ return "Helicopter class: Rotor count: " + std::to_string(rotorCount) + " Vehicle class: Brand: " + brand + " Vehicle class: Year: " + std::to_string(year);}
 };
 
 #endif
