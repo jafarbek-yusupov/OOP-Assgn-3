@@ -5,11 +5,8 @@
 class Submarine : public WaterVehicle{
 private: int maxDepth;
 public:
-Submarine(std::string brand, int year, std::string vesselType, int maxDepth) : WaterVehicle(brand, year, vesselType), maxDepth(maxDepth) {}
-void getInfo() const override{
-    std::cout << "Submarine class:: Max depth: " << maxDepth << " meters" << std::endl;
-    WaterVehicle::getInfo();
-}
+    Submarine(std::string b, int y, int depth) : WaterVehicle(b, y, "Military"), maxDepth(depth) {}
+    std::string getInfo() const override{ return "Submarine class: Max depth: " + std::to_string(maxDepth) + " meters" + " Vehicle class: Brand: " + brand + " Vehicle class: Year: " + std::to_string(year);}
 };
 
 #endif
