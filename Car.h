@@ -5,11 +5,8 @@
 class Car : public LandVehicle{
 private: int numDoors;
 public:
-Car(std::string brand, int year, int wheels, int numDoors) : LandVehicle(brand, year, wheels), numDoors(numDoors) {}
-void getInfo() const override{ 
-    std::cout << "Car class:: Number of doors: " << numDoors << std::endl; 
-    LandVehicle::getInfo();
-} 
+    Car(std::string b, int y, int doors) : LandVehicle(b,y,4), numDoors(doors) {}
+    std::string getInfo() const override{ return "Car class: Number of doors: " + std::to_string(numDoors) + " Vehicle class: Brand: " + brand + " Vehicle class: Year: " + std::to_string(year);}
 };
 
 #endif
