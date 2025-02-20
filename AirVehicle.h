@@ -3,10 +3,10 @@
 #include "Vehicle.h"
 
 class AirVehicle : public Vehicle{
-protected: int maxAlt;
+protected: int maxAltitude;
 public:
-AirVehicle(std::string brand, int year, int maxAlt) : Vehicle(brand, year), maxAlt(maxAlt) {}
-void getInfo() const override{ std::cout << "AirVehicle class:: Max altitude: " << maxAlt << " meters" << std::endl; std::cout << "Vehicle class:: Brand: " << brand << std::endl << "Vehicle class:: Year: " << year << std::endl;}
+    AirVehicle(std::string b, int y, int altitude) : Vehicle(b,y), maxAltitude(altitude) {}
+    std::string getInfo() const override{ return "AirVehicle class: Max altitude: " + std::to_string(maxAltitude) + " meters" + " Vehicle class: Brand: " + brand + " Vehicle class: Year: " + std::to_string(year);}
 };
 
 #endif
