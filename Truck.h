@@ -5,11 +5,8 @@
 class Truck : public LandVehicle{
 private: double loadCapacity;
 public:
-Truck(std::string brand, int year, int wheels, double loadCapacity): LandVehicle(brand, year, wheels), loadCapacity(loadCapacity) {}
-void getInfo() const override{
-    std::cout << "Truck class:: Load capacity: " << loadCapacity << " tons" << std::endl;
-    LandVehicle::getInfo();
-}
+    Truck(std::string b, int y, double capacity) : LandVehicle(b, y, 6), loadCapacity(capacity) {}
+    std::string getInfo() const override{ return "Truck class: Load capacity: " + std::to_string(loadCapacity) + " tons" + " Vehicle class: Brand: " + brand + " Vehicle class: Year: " + std::to_string(year);}
 };
 
 #endif
